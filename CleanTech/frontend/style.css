@@ -1,0 +1,692 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:  rgba(1, 45, 7, 0.6);
+    color: #333;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(1, 45, 7, 0.45);
+    padding: 15px 30px;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 12px rgba(45, 118, 24, 0.1);
+}
+
+header .logo h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #d1e7ff;
+}
+
+/* Main section */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* AQI Display */
+.aqi-display {
+    background: rgb(16, 52, 6);
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.aqi-display h3 {
+    font-size: 2 rem;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* <--- Add or change font here */
+}
+
+
+.aqi-display p {
+    font-size:1.3 rem;
+    margin: 8px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+button#refresh-data {
+    margin-top: 15px;
+    background-color:  rgba(1, 45, 7, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#refresh-data:hover {
+    rgba (1, 45, 7, 0.6);
+}
+
+/* Data table */
+.data-table {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.data-table tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* Style for pollutant data cells */
+.data-table td {
+    padding: 10px 15px;
+    text-align: center; /* Center the text inside the box */
+    border: 1px solid #ddd; /* Add a border around each cell */
+    border-radius: 6px; /* Make the cells rounded */
+    background-color: rgba(1, 45, 7, 0.1); /* Light green background */
+    color: #333; /* Text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a pop-up effect */
+}
+
+/* Add hover effect for pollutant cells */
+.data-table td:hover {
+    background-color: rgba(1, 45, 7, 0.2); /* Slightly darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Style for pollutant name cells */
+.data-table td:first-child {
+    padding: 10px 15px;
+    text-align: center; /* Center the text inside the box */
+    border: 1px solid #ddd; /* Add a border around each cell */
+    border-radius: 6px; /* Make the cells rounded */
+    background-color: rgba(52, 152, 219, 0.1); /* Light blue background */
+    color: #333; /* Text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a pop-up effect */
+}
+
+/* Add hover effect for pollutant name cells */
+.data-table td:first-child:hover {
+    background-color: rgba(52, 152, 219, 0.2); /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    text-align: center;
+     color: #fcfcfce4;
+    font-size: 1 rem;
+}
+
+.login-address-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 5%;
+    background: rgba(1, 45, 7, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(114, 138, 124, 0.08);
+    margin-bottom: 40px;
+    gap: 40px;
+}
+
+.login-form-container {
+    /* flex: 1; */
+    max-width: 350px;
+    background: rgba(1, 45, 7, 0.6);
+    padding: 28px 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(156, 180, 196, 0.1);
+    margin: 0 auto;
+}
+
+.login-form-container h2 {
+    margin-bottom: 18px;
+    color:#f8fbff;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #f8fbff;
+}
+
+.login-form input[type=\"text\"], .login-form input[type=\"password\"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #bcdffb;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    background: #f8fbff;
+    transition: border 0.2s;
+}
+
+.login-form input[type=\"text\"]:focus, .login-form input[type=\"password\"]:focus {
+    border: 1.5px solid #104e25;
+    outline: none;
+}
+
+.login-form button {
+    width: 100%;
+    background: rgba(255,255,255,0);
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-form button:hover {
+    background: rgba(1, 45, 7, 0.6);
+}
+
+.address-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 2vw 2vw 0;
+    max-width: 100%;
+    min-height: 80px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.address-icon {
+    font-size: 1.2rem;
+    margin-right: 6px;
+    color: rgba(1, 45, 7, 0.6);
+}
+
+.address-text {
+    font-size: 0.98rem;
+    color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.85;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    .login-address-section {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 2%;
+    }
+    .address-container, .login-form-container {
+        max-width: 100%;
+        text-align: left;
+    }
+}
+
+#login-message {
+    margin-top: 12px;
+    color: #c0392b;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+#bg-video {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom center;
+    opacity: 0.85;
+    z-index: -1;
+    background: #000;
+    pointer-events: none;
+}
+
+#bg-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.08);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Add this to your style.css for the air quality box media */
+#current-air-quality-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* or your preferred width */
+    margin: 0 auto 24px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#current-air-quality-box img,
+#current-air-quality-box video {
+    width: 100%;
+    height: 260px; /* or auto, or your preferred height */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.contact-section {
+    background: rgba(255,255,255,0.61);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+    padding: 28px 32px;
+    margin: 40px auto 0 auto;
+    max-width: 700px;
+    color: #222;
+}
+.contact-section h2 {
+    color: #04561a;
+    margin-bottom: 12px;
+}
+.contact-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.top-address-bar {
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    padding: 10px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3 rem;
+    font-weight: 1000; 
+    color: rgba(255,255,255,0.92);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+    position: relative;
+}
+.top-address-bar .address-icon {
+    font-size: 2 rem;
+    margin-right: 6px;
+    color: #021725;
+}
+.top-address-bar .address-text {
+    opacity: 0.85;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    line-height: 1.4;
+}
+.aqi-display.with-bg {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 260px;
+}
+
+.aqi-display.with-bg img,
+.aqi-display.with-bg video {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 1;
+    transition: opacity 0.5s;
+}
+
+.aqi-display.with-bg .aqi-overlay {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.55);
+    z-index: 2;
+}
+
+.aqi-display.with-bg .aqi-content {
+    position: relative;
+    z-index: 3;
+    padding: 24px;
+}
+
+.aqi-display.with-bg h3 {
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Arial Black', Arial, sans-serif;
+
+}
+
+.aqi-display.with-bg p {
+    font-size: 2.2rem;
+    margin: 8px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.aqi-display.with-bg button#refresh-data {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.aqi-display.with-bg button#refresh-data:hover {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Style the prediction form container */
+#aqi-form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font here */
+    font-size: 1.9 rem; /* Change font size for the entire form */
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Style the labels for the input fields */
+#aqi-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjust font size */
+    color: #333; /* Text color */
+    background-color: white; /* Add white background */
+    padding: 10px 15px; /* Add padding for spacing */
+    border-radius: 6px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a pop-up effect */
+    border: 1px solid #ddd; /* Add a light border */
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+}
+
+/* Style the input fields */
+#aqi-form input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem; /* Change input font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change input font */
+    background: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+/* Add focus effect for input fields */
+#aqi-form input[type="number"]:focus {
+    border: 1.5px solid #3498db; /* Highlight border on focus */
+    outline: none;
+}
+
+/* Style the submit button */
+#aqi-form button[type="submit"] {
+    background-color: rgba(1, 45, 7, 0.7);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem; /* Change button font size */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for the submit button */
+#aqi-form button[type="submit"]:hover {
+    background-color: rgba(40, 154, 55, 0.9);
+}
+
+/* Style for the result box */
+#prediction-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(1, 45, 7, 0.9); /* Dark green background */
+    color: white; /* Text color */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for a pop-up effect */
+    max-width: 500px; /* Limit the width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* Fade-in animation for the result box */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Style for #data paragraph */
+#data p {
+    font-size: 1.5rem; /* Adjust font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font if needed */
+    color: #333; /* Text color */
+    background-color: white; /* Add white background */
+    padding: 15px 20px; /* Add padding for spacing */
+    border-radius: 6px; /* Rounded corners */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a pop-up effect */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add spacing below the text */
+    border: 1px solid #ddd; /* Add a light border */
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Twinkling animation */
+@keyframes twinkle {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Apply the animation to subheadings */
+h2 {
+    animation: twinkle 1.5s infinite; /* Apply the twinkle animation */
+    color: #040644; /* Adjust the color of the text */
+    font-size: 2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+}
+/* --- Add or override for location display section --- */
+.location-address-section {
+    background: #fff;
+    margin: 32px auto 0 auto;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 24px 32px;
+}
+
+.location-form-container h2 {
+    margin-top: 0;
+    color: #1a4d2e;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.location-display label {
+    min-width: 120px;
+    display: inline-block;
+    font-weight: 600;
+    color: #1a4d2e;
+}
+
+.location-display span {
+    display: inline-block;
+    width: 80%;
+    font-size: 1.08rem;
+    background: #f4f8fb;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-left: 8px;
+    box-sizing: border-box;
+    word-break: break-all;
+}
+
+/* --- Responsive environment video at the top --- */
+#default-env-video {
+    border-radius: 12px;
+    margin: 24px auto 0 auto;
+    display: block;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #000;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Make sure the AQI/video box overlays are correct --- */
+#default-bg, #aqi-animation {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+@media (max-width: 700px) {
+    .location-address-section {
+        padding: 0 4vw;
+    }
+    #default-env-video {
+        height: auto;
+        min-height: 180px;
+    }
+    #default-bg, #aqi-animation {
+        height: 180px;
+    }
+}
+.video-bg-container {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/* Full-page background video */
+#background-video {
+    position: fixed;
+    top: 0; left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    background: #000;
+    pointer-events: none;
+}
+
+/* AQI animation overlays the background video */
+#aqi-animation {
+    position: fixed;
+    left: 0;
+    bottom: 0; /* Anchor to bottom */
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom center; /* Show the bottom of the video */
+    z-index: -1;
+    background: #000;
+    pointer-events: none;
+}
+
+/* Content overlay */
+.main-content-overlay {
+    position: relative;
+    z-index: 1;
+    padding: 40px 0 0 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}

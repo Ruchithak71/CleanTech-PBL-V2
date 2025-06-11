@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clean Tech - Environmental Condition Detector</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Full-page background video -->
+    <video id="background-video" autoplay loop muted playsinline
+        style="position:fixed;top:0;left:0;min-width:100vw;min-height:100vh;width:auto;height:auto;z-index:-1;object-fit:cover;">
+        <source src="media/environment.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Clean Tech</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#input-form">Pollutant Data</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Address at the Top -->
+    <div class="top-address-bar">
+        <span class="address-icon">📍</span>
+        <span class="address-text">
+            DAYANANDA SAGAR ACADEMY OF TECHNOLOGY  AND MANAGEMENT, UDAYAPURA, KANAKAPURA ROAD, BANGALORE 560082
+        </span>
+    </div>
+
+    <!-- Location Display Section -->
+    <section id="location-section" class="location-address-section">
+        <div class="location-form-container">
+            <h2>Your Location</h2>
+            <div class="location-display">
+                <div style="margin-bottom: 10px;">
+                    <label><strong>Address:</strong></label>
+                    <span id="address" style="display:inline-block; width: 80%;">DAYANANDA SAGAR ACADEMY OF TECHNOLOGY AND MANAGEMENT, UDAYAPURA, KANAKAPURA ROAD, BANGALORE 560082</span>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label><strong>Latitude:</strong></label>
+                    <span id="latitude" style="display:inline-block; width: 80%;">12.825089</span>
+                </div>
+                <div>
+                    <label><strong>Longitude:</strong></label>
+                    <span id="longitude" style="display:inline-block; width: 80%;">77.515091</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main AQI Display Section -->
+    <main id="main-section">
+        <section id="overview">
+            <h2>Current Air Quality</h2>
+            <div class="aqi-display with-bg" id="current-air-quality-box">
+                <img id="default-bg" src="media/environment-bg.jpg" alt="Environment" style="width:100%; display:block; position:absolute; left:0; top:0;">
+                <video id="aqi-animation" loop autoplay muted style="width:100%; display:none; position:absolute; left:0; top:0;">
+                    <source id="aqi-video-source" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="aqi-overlay"></div>
+                <div class="aqi-content">
+                    <h3>Location: Bangalore</h3>
+                    <p>
+                        AQI Level: <span id="aqi-level">-</span>
+                    </p>
+                    <p>
+                        PM2.5: <span id="pm25-level">-</span> µg/m³
+                    </p>
+                    <p>
+                        PM10: <span id="pm10-level">-</span> µg/m³
+                    </p>
+                    <div id="aqi-message" style="margin-top: 12px; font-size: 1.05rem; color: #2980b9;"></div>
+                    <button id="refresh-data" type="button">Refresh Data</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Only one pollutant data section below -->
+        <section id="input-form">
+            <h2>Real-Time AQI Prediction</h2>
+            <div id="realtime-aqi-box" class="aqi-result-box">
+                <p>
+                    <strong>AQI:</strong> <span id="realtime-aqi">-</span>
+                </p>
+                <p>
+                    <strong>Message:</strong> <span id="realtime-message">-</span>
+                </p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Pollutant</th>
+                            <th>Value (µg/m³)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CO</td>     <td id="realtime-co">-</td></tr>
+                        <tr><td>NO</td>     <td id="realtime-no">-</td></tr>
+                        <tr><td>NO2</td>    <td id="realtime-no2">-</td></tr>
+                        <tr><td>NOx</td>    <td id="realtime-nox">-</td></tr>
+                        <tr><td>O3</td>     <td id="realtime-o3">-</td></tr>
+                        <tr><td>SO2</td>    <td id="realtime-so2">-</td></tr>
+                        <tr><td>PM2.5</td>  <td id="realtime-pm25">-</td></tr>
+                        <tr><td>PM10</td>   <td id="realtime-pm10">-</td></tr>
+                        <tr><td>NH3</td>    <td id="realtime-nh3">-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" style="display:none;">
+        <h2>Contact Us</h2>
+        <p>
+            <strong>Email:</strong> ruchithakruchithak71@gmail.com<br>
+            <strong>Phone:</strong> +91 9606073893
+        </p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Clean Tech. All rights reserved.</p>
+    </footer>
+
+    <div id="bg-overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>
